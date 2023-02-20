@@ -11,26 +11,24 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
 
 }
+
+// 사전 과제 설명 링크: https://yagomacademy.notion.site/iOS-2-3f670cc9788f4384b000bfe940447d59
+
+// ** 요구사항
+// 웹의 이미지를 다운로드 받는다.
+// 다 다운된 이미지는 화면에 띄운다.
+// progress로 다운로드 형황을 보여준다.
+// 전체 다 다운 받는 버튼도 있다.
+
+// ** 구현 아이디어
+// tableView 구조로 만들기
+// 이미지 다운 어땋게 하지? -> URLSession
+// 이미지 프로그래스 어떻게 하지? -> URLSesison Delegate에 뭔가 있다. https://medium.com/swlh/tracking-download-progress-with-urlsessiondownloaddelegate-5174147009f
 
