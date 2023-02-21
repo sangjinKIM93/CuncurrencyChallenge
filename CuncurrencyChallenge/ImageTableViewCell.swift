@@ -44,4 +44,23 @@ class ImageTableViewCell: UITableViewCell {
         loadButton.setTitleColor(.black, for: .normal)
         loadButton.backgroundColor = .gray
     }
+    
+    func configureImage(stringUrl: String) {
+        guard let url = URL(string: stringUrl) else {
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { data, _, _ in
+            guard let data = data,
+                  let image = UIImage(data: data) else {
+                return
+            }
+
+            DispatchQueue.main.async() {[weak self] in
+                self?.myImageView.image = image
+            }
+        }.resume()
+    }
 }
