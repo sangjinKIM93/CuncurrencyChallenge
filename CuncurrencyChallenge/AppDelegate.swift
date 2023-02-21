@@ -32,3 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // 이미지 다운 어땋게 하지? -> URLSession
 // 이미지 프로그래스 어떻게 하지? -> URLSesison Delegate에 뭔가 있다. https://medium.com/swlh/tracking-download-progress-with-urlsessiondownloaddelegate-5174147009f
 
+// ** 구현 순서
+// 1. tableView
+// 2. 이미지 다운
+// 3. 이미지 프로그레스
+// 4. 이미지 전체 다운
