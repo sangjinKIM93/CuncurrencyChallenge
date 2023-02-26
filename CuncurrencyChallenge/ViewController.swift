@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     let tableView = UITableView()
+    let loadAllButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +25,32 @@ class ViewController: UIViewController {
     
     private func setupView() {
         self.view.addSubview(tableView)
+        self.view.addSubview(loadAllButton)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
+        
+        loadAllButton.translatesAutoresizingMaskIntoConstraints = false
+        loadAllButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        loadAllButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        loadAllButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
+        loadAllButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        
+        loadAllButton.setTitle("모두 받기", for: .normal)
+        loadAllButton.backgroundColor = .yellow
+        loadAllButton.setTitleColor(.black, for: .normal)
+        loadAllButton.addTarget(self, action: #selector(didTapLoadAllButton), for: .touchUpInside)
+    }
+    
+    @objc func didTapLoadAllButton() {
+        for cell in tableView.visibleCells {
+            if let cell = cell as? ImageTableViewCell {
+                cell.configureImage(stringUrl: "https://www.treeinfo.net/data/file/ti_free/thumb-2001093550_ZYiXBxHv_acc30dee7d6f41bcd70cdde0f16214b6d21893d4_700x467.jpg")
+            }
+        }
     }
 }
 
