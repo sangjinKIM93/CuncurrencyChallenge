@@ -71,4 +71,5 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         }
         cell.configureImage(stringUrl: "https://www.treeinfo.net/data/file/ti_free/thumb-2001093550_ZYiXBxHv_acc30dee7d6f41bcd70cdde0f16214b6d21893d4_700x467.jpg")
     }
+    
 }
